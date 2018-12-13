@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>746874009854-n4hu1lq2d28gf3dhs0v8mbbtie5n4ha2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.746874009854-n4hu1lq2d28gf3dhs0v8mbbtie5n4ha2</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDwTI1qhG3ym5cUM-57rkXmyIm_cQZJMuI</string>
+	<key>GCM_SENDER_ID</key>
+	<string>746874009854</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.keplersegg.myself</string>
+	<key>PROJECT_ID</key>
+	<string>quiz-enterprise-978</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quiz-enterprise-978.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:746874009854:ios:a5e27c3b57eaf730</string>
+	<key>DATABASE_URL</key>
+	<string>https://quiz-enterprise-978.firebaseio.com</string>
+</dict>
+</plist>

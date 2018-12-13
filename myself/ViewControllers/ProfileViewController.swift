@@ -7,45 +7,48 @@
 //
 
 import UIKit
+import FacebookLogin
+import GoogleSignIn
 
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var lblName: UILabel!
+    @IBOutlet weak var imgUser: UIImageView!
     @IBOutlet weak var btnLogout: UIButton!
+    @IBOutlet weak var lblUserName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        btnLogout.addTarget(self, action: #selector(self.btnLogoutClicked), for: .touchUpInside)
         
-        HttpRequest.send(url: "tasks",
-                         method: "GET",
-                         data: nil,
-                         cbSuccess: CallbackSuccess,
-                         cbError: CallbackError);
+        btnLogout.addTarget(self, action: #selector(self.btnLogoutClicked), for: .touchUpInside)
+        imgUser.layer.cornerRadius = imgUser.frame.width / 2
+        imgUser.layer.masksToBounds = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if (appDelegate.user != nil) {
+            
+            lblUserName.text = appDelegate.user!.GetFullName()
+            let url = URL(string: appDelegate.user!.PictureUrl)
+            let data = try? Data(contentsOf: url!)
+            imgUser.image = UIImage(data: data!)
+        }
+        else {
+            
+            lblUserName.text = "Guest"
+        }
     }
     
     @objc func btnLogoutClicked() {
         
+        LoginManager().logOut()
+        GIDSignIn.sharedInstance().signOut()
+        DataStore.SetAccessToken(accessToken: "")
+        
         self.performSegue(withIdentifier: "sgLogout", sender: self)
-    }
-    
-    func CallbackError(statusCode:Int, message: String)
-    {
-    }
-    
-    func CallbackSuccess(list:ListWrapper<Task>)
-    {
-        DispatchQueue.main.async(execute:
-            {
-                self.ListLoaded(list:list)
-        })
-    }
-    
-    func ListLoaded(list:ListWrapper<Task>)
-    {
-        //self.items.removeAll();
-        //self.items += list;
-        //self.tableView.reloadData();
     }
     
     /*
@@ -59,3 +62,4 @@ class ProfileViewController: UIViewController {
     */
 
 }
+

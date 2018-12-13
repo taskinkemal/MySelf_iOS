@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		2047FA2F60F691B595A45C77 /* Pods_myself.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ABAED252C5E70D4C2260312 /* Pods_myself.framework */; };
+		830D368921B1D3D400BCB8D5 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830D368821B1D3D400BCB8D5 /* TasksViewController.swift */; };
+		830D368B21B1DB9300BCB8D5 /* TaskNumericViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830D368A21B1DB9300BCB8D5 /* TaskNumericViewCell.swift */; };
+		830D368D21B1DF3100BCB8D5 /* TaskBooleanViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 830D368C21B1DF3100BCB8D5 /* TaskBooleanViewCell.swift */; };
+		832ED21321B4033100CD4720 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED21221B4033100CD4720 /* User.swift */; };
+		832ED21521B4106700CD4720 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED21421B4106700CD4720 /* Entry.swift */; };
+		832ED21721B4116D00CD4720 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED21621B4116D00CD4720 /* Utils.swift */; };
+		832ED21C21B49D9700CD4720 /* TaskEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED21B21B49D9700CD4720 /* TaskEntry.swift */; };
+		832ED22421BB240C00CD4720 /* RealmHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832ED22321BB240C00CD4720 /* RealmHelper.swift */; };
+		8348A09821BB2C1600D463D5 /* SyncTasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8348A09721BB2C1600D463D5 /* SyncTasks.swift */; };
+		835E792121B2BBA600912895 /* TokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E792021B2BBA600912895 /* TokenRequest.swift */; };
+		835E792321B2BCAE00912895 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E792221B2BCAE00912895 /* AuthToken.swift */; };
+		835E792521B336A400912895 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835E792421B336A400912895 /* GoogleService-Info.plist */; };
 		83F26F8921AACCC1001A8546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F26F8821AACCC1001A8546 /* AppDelegate.swift */; };
 		83F26F8B21AACCC1001A8546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F26F8A21AACCC1001A8546 /* ViewController.swift */; };
 		83F26F8E21AACCC1001A8546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F26F8C21AACCC1001A8546 /* Main.storyboard */; };
@@ -28,6 +40,19 @@
 		2CA66A0194CFDFC0A63662C0 /* Pods-myself.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myself.release.xcconfig"; path = "Pods/Target Support Files/Pods-myself/Pods-myself.release.xcconfig"; sourceTree = "<group>"; };
 		3C6A14D77F6857F82B1FDE3F /* Pods-myself.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myself.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myself/Pods-myself.debug.xcconfig"; sourceTree = "<group>"; };
 		4ABAED252C5E70D4C2260312 /* Pods_myself.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_myself.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		830D368821B1D3D400BCB8D5 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
+		830D368A21B1DB9300BCB8D5 /* TaskNumericViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNumericViewCell.swift; sourceTree = "<group>"; };
+		830D368C21B1DF3100BCB8D5 /* TaskBooleanViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskBooleanViewCell.swift; sourceTree = "<group>"; };
+		832ED21221B4033100CD4720 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		832ED21421B4106700CD4720 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		832ED21621B4116D00CD4720 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		832ED21B21B49D9700CD4720 /* TaskEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEntry.swift; sourceTree = "<group>"; };
+		832ED21D21B735A600CD4720 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		832ED22321BB240C00CD4720 /* RealmHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHelper.swift; sourceTree = "<group>"; };
+		8348A09721BB2C1600D463D5 /* SyncTasks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyncTasks.swift; sourceTree = "<group>"; };
+		835E792021B2BBA600912895 /* TokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
+		835E792221B2BCAE00912895 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
+		835E792421B336A400912895 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		83F26F8521AACCC1001A8546 /* myself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F26F8821AACCC1001A8546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83F26F8A21AACCC1001A8546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,6 +92,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		832ED22221BB236C00CD4720 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				832ED22321BB240C00CD4720 /* RealmHelper.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		83F26F7C21AACCC0001A8546 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +121,7 @@
 		83F26F8721AACCC1001A8546 /* myself */ = {
 			isa = PBXGroup;
 			children = (
+				832ED22221BB236C00CD4720 /* Realm */,
 				83F26FA421AACE7C001A8546 /* ViewControllers */,
 				83F26FA121AACE42001A8546 /* Models */,
 				83F26F9A21AACDC1001A8546 /* Helpers */,
@@ -97,6 +131,7 @@
 				83F26F8F21AACCC2001A8546 /* Assets.xcassets */,
 				83F26FAB21AAD133001A8546 /* login_background.jpeg */,
 				83F26F9121AACCC2001A8546 /* LaunchScreen.storyboard */,
+				835E792421B336A400912895 /* GoogleService-Info.plist */,
 				83F26F9421AACCC2001A8546 /* Info.plist */,
 			);
 			path = myself;
@@ -105,10 +140,12 @@
 		83F26F9A21AACDC1001A8546 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8348A09721BB2C1600D463D5 /* SyncTasks.swift */,
 				83F26FB321ACBAD1001A8546 /* DataStore.swift */,
 				83F26F9B21AACDD2001A8546 /* Constants.swift */,
 				83F26F9D21AACDDE001A8546 /* HttpRequest.swift */,
 				83F26F9F21AACDF6001A8546 /* DateFormatter.swift */,
+				832ED21621B4116D00CD4720 /* Utils.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -118,6 +155,11 @@
 			children = (
 				83F26FB521ADF395001A8546 /* Task.swift */,
 				83F26FA221AACE59001A8546 /* BaseModel.swift */,
+				835E792021B2BBA600912895 /* TokenRequest.swift */,
+				835E792221B2BCAE00912895 /* AuthToken.swift */,
+				832ED21221B4033100CD4720 /* User.swift */,
+				832ED21421B4106700CD4720 /* Entry.swift */,
+				832ED21B21B49D9700CD4720 /* TaskEntry.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -127,6 +169,9 @@
 			children = (
 				83F26FA521AACEB0001A8546 /* LoginViewController.swift */,
 				83F26FAD21AB6068001A8546 /* ProfileViewController.swift */,
+				830D368821B1D3D400BCB8D5 /* TasksViewController.swift */,
+				830D368A21B1DB9300BCB8D5 /* TaskNumericViewCell.swift */,
+				830D368C21B1DF3100BCB8D5 /* TaskBooleanViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -134,6 +179,7 @@
 		CF477FEFD3EAA541BE1C027F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				832ED21D21B735A600CD4720 /* CoreData.framework */,
 				4ABAED252C5E70D4C2260312 /* Pods_myself.framework */,
 			);
 			name = Frameworks;
@@ -151,6 +197,7 @@
 				83F26F8221AACCC1001A8546 /* Frameworks */,
 				83F26F8321AACCC1001A8546 /* Resources */,
 				8B4DD5F732B00A2DC2612511 /* [CP] Embed Pods Frameworks */,
+				98CCA57CD290FB7BC88EDB43 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -201,6 +248,7 @@
 			files = (
 				83F26F9321AACCC2001A8546 /* LaunchScreen.storyboard in Resources */,
 				83F26FAC21AAD133001A8546 /* login_background.jpeg in Resources */,
+				835E792521B336A400912895 /* GoogleService-Info.plist in Resources */,
 				83F26F9021AACCC2001A8546 /* Assets.xcassets in Resources */,
 				83F26F8E21AACCC1001A8546 /* Main.storyboard in Resources */,
 			);
@@ -245,6 +293,13 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -255,10 +310,39 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myself/Pods-myself-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		98CCA57CD290FB7BC88EDB43 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-myself/Pods-myself-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-myself/Pods-myself-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -269,12 +353,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F26FA621AACEB0001A8546 /* LoginViewController.swift in Sources */,
+				832ED21521B4106700CD4720 /* Entry.swift in Sources */,
 				83F26FA321AACE59001A8546 /* BaseModel.swift in Sources */,
+				832ED21C21B49D9700CD4720 /* TaskEntry.swift in Sources */,
+				830D368D21B1DF3100BCB8D5 /* TaskBooleanViewCell.swift in Sources */,
+				830D368921B1D3D400BCB8D5 /* TasksViewController.swift in Sources */,
+				832ED21321B4033100CD4720 /* User.swift in Sources */,
+				832ED22421BB240C00CD4720 /* RealmHelper.swift in Sources */,
 				83F26FB621ADF395001A8546 /* Task.swift in Sources */,
 				83F26F8B21AACCC1001A8546 /* ViewController.swift in Sources */,
 				83F26F9E21AACDDE001A8546 /* HttpRequest.swift in Sources */,
+				8348A09821BB2C1600D463D5 /* SyncTasks.swift in Sources */,
 				83F26F8921AACCC1001A8546 /* AppDelegate.swift in Sources */,
+				835E792321B2BCAE00912895 /* AuthToken.swift in Sources */,
+				832ED21721B4116D00CD4720 /* Utils.swift in Sources */,
 				83F26F9C21AACDD2001A8546 /* Constants.swift in Sources */,
+				835E792121B2BBA600912895 /* TokenRequest.swift in Sources */,
+				830D368B21B1DB9300BCB8D5 /* TaskNumericViewCell.swift in Sources */,
 				83F26FAE21AB6068001A8546 /* ProfileViewController.swift in Sources */,
 				83F26FB421ACBAD1001A8546 /* DataStore.swift in Sources */,
 				83F26FA021AACDF6001A8546 /* DateFormatter.swift in Sources */,
@@ -430,7 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keplersegg.myself;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -449,7 +544,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.keplersegg.myself;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

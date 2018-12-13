@@ -8,9 +8,7 @@
 
 import Foundation
 
-class BaseModel
+protocol BaseModel
 {
-    func toJSON() -> NSDictionary {
-        return NSDictionary.init()
-    }
+    func toJSON() -> NSDictionary
 }
