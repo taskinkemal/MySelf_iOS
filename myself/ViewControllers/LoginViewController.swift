@@ -9,6 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import FBSDKLoginKit
 import Firebase
 import GoogleSignIn
 
@@ -43,6 +44,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         btnFacebook.addTarget(self, action: #selector(self.btnFacebookClicked), for: .touchUpInside)
         btnGoogle.addTarget(self, action: #selector(self.btnGoogleClicked), for: .touchUpInside)
 
+        if let accessToken = DataStore.GetFacebookToken() {
+            // User is logged in, use 'accessToken' here.
+            self.GetFacebookUser(facebookToken: accessToken)
+        }
+        
         if let accessToken = AccessToken.current {
             // User is logged in, use 'accessToken' here.
             self.GetFacebookUser(facebookToken: accessToken.authenticationToken)
@@ -98,6 +104,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             let email = user.profile.email
             let pictureUrl = user.profile.imageURL(withDimension: 200)?.absoluteString
             
+            DataStore.SetGoogleToken(accessToken: idToken!)
+            
             let tokenRequest = TokenRequest(Email: email!, FirstName: givenName!, LastName: familyName!, PictureUrl: pictureUrl!,
                                             FacebookToken: "", GoogleToken: idToken!, DeviceID: "")
             
@@ -130,7 +138,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                 print("User cancelled login")
             case .success( _, _, let accessToken):
                 print("Logged in")
-                
+                DataStore.SetFacebookToken(accessToken: accessToken.authenticationToken)
                 self.GetFacebookUser(facebookToken: accessToken.authenticationToken)
             }
         }
@@ -138,7 +146,8 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     func GetFacebookUser(facebookToken: String) {
         
-        let request = GraphRequest.init(graphPath: "me", parameters: ["fields":"first_name,last_name,email, picture.type(large)"], accessToken: AccessToken.current, httpMethod: .GET, apiVersion: FacebookCore.GraphAPIVersion.defaultVersion)
+        let accessToken = AccessToken(authenticationToken: facebookToken)
+        let request = GraphRequest.init(graphPath: "me", parameters: ["fields":"first_name,last_name,email, picture.type(large)"], accessToken: accessToken, httpMethod: .GET, apiVersion: FacebookCore.GraphAPIVersion.defaultVersion)
         
         request.start({ (response, requestResult) in
             switch requestResult{

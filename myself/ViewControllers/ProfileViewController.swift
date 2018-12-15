@@ -47,6 +47,8 @@ class ProfileViewController: UIViewController {
         LoginManager().logOut()
         GIDSignIn.sharedInstance().signOut()
         DataStore.SetAccessToken(accessToken: "")
+        DataStore.SetGoogleToken(accessToken: "")
+        DataStore.SetFacebookToken(accessToken: "")
         
         self.performSegue(withIdentifier: "sgLogout", sender: self)
     }

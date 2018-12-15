@@ -10,9 +10,29 @@ import Foundation
 
 final class DataStore {
     
+    static func GetFacebookToken() -> String? {
+        
+        return UserDefaults.standard.object(forKey: "FacebookToken") as? String
+    }
+    
+    static func GetGoogleToken() -> String? {
+        
+        return UserDefaults.standard.object(forKey: "GoogleToken") as? String
+    }
+    
     static func GetAccessToken() -> String? {
         
         return UserDefaults.standard.object(forKey: "AccessToken") as? String
+    }
+    
+    static func SetFacebookToken(accessToken: String) {
+        
+        return UserDefaults.standard.set(accessToken, forKey: "FacebookToken")
+    }
+    
+    static func SetGoogleToken(accessToken: String) {
+        
+        return UserDefaults.standard.set(accessToken, forKey: "GoogleToken")
     }
     
     static func SetAccessToken(accessToken: String) {

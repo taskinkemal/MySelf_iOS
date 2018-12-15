@@ -9,6 +9,6 @@
 import Foundation
 
 struct Constants {
-    //static let serviceEndpoint = "http://myself.keplersegg.com/api/api/"
-    static let serviceEndpoint = "http://127.0.0.1:5001/api/"
+    static let serviceEndpoint = "http://myself.keplersegg.com/api/api/"
+    //static let serviceEndpoint = "http://127.0.0.1:5001/api/"
 }
