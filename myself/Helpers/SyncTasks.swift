@@ -11,6 +11,7 @@ import Foundation
 class SyncTasks {
     
     var controller: TasksViewController?
+    var day: Int = 0
     
     func Run(controller: TasksViewController) {
         
@@ -64,7 +65,7 @@ class SyncTasks {
                 }
             }
             
-            self.controller!.ListLoaded(list: RealmHelper.GetTaskEntries(day: Utils.GetToday()))
+            self.controller!.ListLoaded(list: RealmHelper.GetTaskEntries(day: self.day))
             
         }
     }

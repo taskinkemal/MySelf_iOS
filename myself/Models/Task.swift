@@ -67,23 +67,17 @@ class Task : Object, Codable
         Goal = try container.decode(Int.self, forKey: .Goal)
         GoalTimeFrame = try container.decode(Int.self, forKey: .GoalTimeFrame)
         Status = try container.decode(Int.self, forKey: .Status)
-        let modificationDateStr = try container.decode(String.self, forKey: .ModificationDate)
+        ModificationDate = try container.decode(Date.self, forKey: .ModificationDate)
         AutomationType = try container.decodeIfPresent(Int.self, forKey: .AutomationType) ?? 0
         AutomationVar = try container.decodeIfPresent(String.self, forKey: .AutomationVar)
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
-        formatter.calendar = Calendar(identifier: .iso8601)
-        formatter.timeZone = TimeZone(secondsFromGMT: 0)
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        
-        if let date = formatter.date(from: modificationDateStr) {
+        /*if let date = DateFormatter.iso8601.date(from: modificationDateStr) {
             ModificationDate = date
         } else {
             throw DecodingError.dataCorruptedError(forKey: .ModificationDate,
                                                    in: container,
                                                    debugDescription: "Date string does not match format expected by formatter.")
-        }
+        }*/
     }
     
     convenience init(_ id: Int, _ label: String, dataType: Int, unit: String, hasGoal: Bool,

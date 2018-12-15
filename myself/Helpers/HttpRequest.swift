@@ -92,6 +92,8 @@ final class HttpRequest
                 cbError(statusCode, errorMessage)
                 return
             }
+            let feedback = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+
             
             let decoder = JSONDecoder();
             decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full);

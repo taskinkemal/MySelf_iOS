@@ -39,7 +39,18 @@ class Entry : Object, Codable, BaseModel
         TaskId = try container.decode(Int.self, forKey: .TaskId)
         Value = try container.decode(Int.self, forKey: .Value)
         ModificationDate = try container.decode(Date.self, forKey: .ModificationDate)
+        /*let modificationDateStr = try container.decode(String.self, forKey: .ModificationDate)
+        
+        if let date = DateFormatter.iso8601.date(from: modificationDateStr) {
+            ModificationDate = date
+        } else {
+            throw DecodingError.dataCorruptedError(forKey: .ModificationDate,
+                                                   in: container,
+                                                   debugDescription: "Date string does not match format expected by formatter.")
+        }*/
+        
         compoundKey = self.compoundKeyValue()
+        
     }
     
     convenience init(_ day: Int, _ taskId: Int, value: Int, modificationDate: Date) {
@@ -47,7 +58,7 @@ class Entry : Object, Codable, BaseModel
         self.Day = day
         self.TaskId = taskId
         self.Value = value
-        self.ModificationDate = modificationDate
+        ModificationDate = modificationDate
     }
     
     func toJSON() -> NSDictionary {
@@ -55,7 +66,7 @@ class Entry : Object, Codable, BaseModel
             "Day": self.Day,
             "TaskId": self.TaskId,
             "Value": self.Value,
-            "ModificationDate": self.ModificationDate
+            "ModificationDate": DateFormatter.iso8601.string(from: self.ModificationDate)
         ]
     }
 }

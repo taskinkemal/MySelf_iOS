@@ -81,7 +81,7 @@ final class RealmHelper {
     {
     }
     
-    static func CallbackSuccessUploadEntry(result:Bool)
+    static func CallbackSuccessUploadEntry(result:JsonResult<Bool>)
     {
     }
     

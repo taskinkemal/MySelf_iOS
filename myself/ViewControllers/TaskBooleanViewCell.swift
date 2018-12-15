@@ -39,7 +39,23 @@ class TaskBooleanViewCell: UITableViewCell {
         
         entry?.ModificationDate = Date()
         
-        RealmHelper.SaveEntry(entry: entry!)
+        DispatchQueue.main.async {
+            RealmHelper.SaveEntry(entry: self.entry!)
+            
+            HttpRequest.send(url: "entries",
+                             method: "POST",
+                             data: self.entry,
+                             cbSuccess: self.CallbackSuccess,
+                             cbError: self.CallbackError);
+        }
+    }
+    
+    func CallbackError(statusCode:Int, message: String)
+    {
+    }
+    
+    func CallbackSuccess(result: JsonResult<Bool>)
+    {
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
