@@ -176,7 +176,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
     
     @objc func handleTap(gestureRecognizer: UIGestureRecognizer) {
         
-        DataStore.SetAccessToken(accessToken: "kemal")
+        DataStore.SetAccessToken(accessToken: "")
         self.performSegue(withIdentifier: "sgLogin", sender: self)
     }
     

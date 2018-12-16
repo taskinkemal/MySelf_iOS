@@ -23,7 +23,7 @@ struct ListWrapper<T : Codable> : Codable
     */
 }
 
-class Task : Object, Codable
+class Task : Object, Codable, BaseModel
 {
     @objc public dynamic var Id = 0
     @objc public dynamic var Label = ""
@@ -96,5 +96,22 @@ class Task : Object, Codable
         self.ModificationDate = modificationDate
         self.AutomationType = automationType
         self.AutomationVar = automationVar
+    }
+    
+    func toJSON() -> NSDictionary {
+        return [
+            "Id": self.Id,
+            "Label": self.Label,
+            "DataType": self.DataType,
+            "Unit": self.Unit!,
+            "HasGoal": self.HasGoal,
+            "GoalMinMax": self.GoalMinMax,
+            "Goal": self.Goal,
+            "GoalTimeFrame": self.GoalTimeFrame,
+            "Status": self.Status,
+            "AutomationType": self.AutomationType,
+            "AutomationVar": self.AutomationVar!,
+            "ModificationDate": DateFormatter.iso8601.string(from: self.ModificationDate)
+        ]
     }
 }
