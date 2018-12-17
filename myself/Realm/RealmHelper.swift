@@ -47,6 +47,20 @@ final class RealmHelper {
         }
     }
     
+    static func GetTask(id: Int) -> Task? {
+        
+        let realm = try! Realm()
+        
+        let tasks = realm.objects(Task.self).filter("Id = %@", id)
+        
+        if (tasks.count == 1) {
+            return tasks.first
+        }
+        else {
+            return nil
+        }
+    }
+    
     static func GetTaskEntries(day: Int) -> [TaskEntry] {
         
         let realm = try! Realm()

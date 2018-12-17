@@ -9,9 +9,10 @@
 import UIKit
 import RealmSwift
 
-class TasksViewController: UITableViewController {
+class TasksViewController: UITableViewController, UIGestureRecognizerDelegate {
 
     var items = [TaskEntry].init();
+    var selectedTaskId: Int?
     
     public var day: Int = 0
     
@@ -24,6 +25,37 @@ class TasksViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupLongPressGesture()
+    }
+    
+    func setupLongPressGesture() {
+        let longPressGesture:UILongPressGestureRecognizer = UILongPressGestureRecognizer(target: self, action: #selector(self.handleLongPress))
+        longPressGesture.minimumPressDuration = 1.0 // 1 second press
+        longPressGesture.delegate = self as UIGestureRecognizerDelegate
+        self.tableView.addGestureRecognizer(longPressGesture)
+    }
+    
+    @objc func handleLongPress(_ gestureRecognizer: UILongPressGestureRecognizer){
+        if gestureRecognizer.state == .ended {
+            let touchPoint = gestureRecognizer.location(in: self.tableView)
+            if let indexPath = tableView.indexPathForRow(at: touchPoint) {
+                
+                selectedTaskId = self.items[indexPath.row].task!.Id
+                
+                self.performSegue(withIdentifier: "sgAddTask", sender: self)
+                //sgAddTask
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if (segue.identifier == "sgAddTask") {
+            
+            let viewController = segue.destination as! TaskEditViewController
+            viewController.taskId = selectedTaskId!
+        }
     }
     
     public func ListLoaded(list:[TaskEntry])

@@ -46,12 +46,38 @@ class TaskEditViewController: UIViewController {
         
         self.navigationItem.setLeftBarButton(UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(TaskEditViewController.btnCancelClicked)), animated: true)
 
-        self.txbUnit.isHidden = true
-        self.vGoal.isHidden = true
-        self.sgmGoalMinMax.isHidden = true
-        self.sgmGoalTimeFrame.isHidden = true
+        DispatchQueue.main.async {
+            
+            if (self.taskId > 0) {
+            
+                self.task = RealmHelper.GetTask(id: self.taskId)
+                
+                if (self.task == nil) {
+                    //TODO: Error
+                }
+                else {
+                    self.txbLabel.text = self.task?.Label
+                    self.swTrackPerUnit.setOn(self.task?.DataType == 1, animated: false)
+                    self.txbUnit.text = self.task?.Unit
+                    self.swSetGoal.setOn(self.task!.HasGoal, animated: false)
+                    self.txbGoal.text = String(self.task!.Goal)
+                    self.lblUnits.text = self.task?.Unit
+                    if (self.task!.GoalMinMax >= 1 && self.task!.GoalMinMax <= 3) {
+                        self.sgmGoalMinMax.selectedSegmentIndex = self.task!.GoalMinMax - 1
+                    }
+                    if (self.task!.GoalTimeFrame >= 1 && self.task!.GoalTimeFrame <= 3) {
+                        self.sgmGoalTimeFrame.selectedSegmentIndex = self.task!.GoalTimeFrame - 1
+                    }
+                }
+            }
+            
+            self.txbUnit.isHidden = !self.swTrackPerUnit.isOn
+            self.vGoal.isHidden = !self.swSetGoal.isOn
+            self.sgmGoalMinMax.isHidden = !self.swSetGoal.isOn
+            self.sgmGoalTimeFrame.isHidden = !self.swSetGoal.isOn
         
-        stackView.sizeToFit()
+            self.stackView.sizeToFit()
+        }
     }
     
     @objc func btnDoneClicked(sender:UIBarButtonItem) {
@@ -64,9 +90,9 @@ class TaskEditViewController: UIViewController {
          
             task = Task(taskId, label, dataType: dataType,
                             unit: unit, hasGoal: swSetGoal.isOn,
-                            goalMinMax: sgmGoalMinMax.selectedSegmentIndex,
+                            goalMinMax: sgmGoalMinMax.selectedSegmentIndex + 1,
                             goal: goal,
-                            goalTimeFrame: sgmGoalTimeFrame.selectedSegmentIndex,
+                            goalTimeFrame: sgmGoalTimeFrame.selectedSegmentIndex + 1,
                             status: 1,
                             modificationDate: Date(),
                             automationType: 0,

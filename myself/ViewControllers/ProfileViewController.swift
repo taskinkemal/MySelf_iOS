@@ -22,6 +22,12 @@ class ProfileViewController: UIViewController {
         btnLogout.addTarget(self, action: #selector(self.btnLogoutClicked), for: .touchUpInside)
         imgUser.layer.cornerRadius = imgUser.frame.width / 2
         imgUser.layer.masksToBounds = true
+        
+        lblUserName.layer.borderWidth = 1
+        lblUserName.layer.borderColor = UIColor.lightGray.cgColor
+        
+        btnLogout.layer.borderWidth = 1
+        btnLogout.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     override func viewDidAppear(_ animated: Bool) {
