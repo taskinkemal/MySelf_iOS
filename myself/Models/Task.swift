@@ -70,14 +70,6 @@ class Task : Object, Codable, BaseModel
         ModificationDate = try container.decode(Date.self, forKey: .ModificationDate)
         AutomationType = try container.decodeIfPresent(Int.self, forKey: .AutomationType) ?? 0
         AutomationVar = try container.decodeIfPresent(String.self, forKey: .AutomationVar)
-        
-        /*if let date = DateFormatter.iso8601.date(from: modificationDateStr) {
-            ModificationDate = date
-        } else {
-            throw DecodingError.dataCorruptedError(forKey: .ModificationDate,
-                                                   in: container,
-                                                   debugDescription: "Date string does not match format expected by formatter.")
-        }*/
     }
     
     convenience init(_ id: Int, _ label: String, dataType: Int, unit: String, hasGoal: Bool,

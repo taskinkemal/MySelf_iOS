@@ -14,14 +14,16 @@ class User
     var FirstName: String
     var LastName: String
     var PictureUrl: String
+    var Score: Int
     
     init(Email: String, FirstName: String, LastName: String,
-         PictureUrl: String)
+         PictureUrl: String, Score: Int)
     {
         self.Email = Email;
         self.FirstName = FirstName;
         self.LastName = LastName;
         self.PictureUrl = PictureUrl;
+        self.Score = Score;
     }
     
     func GetFullName() -> String {

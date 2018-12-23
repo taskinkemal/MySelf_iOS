@@ -73,7 +73,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                 let tokenRequest = TokenRequest(Email: email!, FirstName: givenName!, LastName: familyName!, PictureUrl: pictureUrl!,
                                                 FacebookToken: "", GoogleToken: idToken!, DeviceID: "")
                 
-                self.SetUser(email: email!, firstName: givenName!, lastName: familyName!, pictureUrl: pictureUrl!)
+                self.SetUser(email: email!, firstName: givenName!, lastName: familyName!, pictureUrl: pictureUrl!, score: 0)
                 
                 HttpRequest.send(url: "token/Google",
                                  method: "POST",
@@ -109,7 +109,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
             let tokenRequest = TokenRequest(Email: email!, FirstName: givenName!, LastName: familyName!, PictureUrl: pictureUrl!,
                                             FacebookToken: "", GoogleToken: idToken!, DeviceID: "")
             
-            self.SetUser(email: email!, firstName: givenName!, lastName: familyName!, pictureUrl: pictureUrl!)
+            self.SetUser(email: email!, firstName: givenName!, lastName: familyName!, pictureUrl: pictureUrl!, score: 0)
             
             HttpRequest.send(url: "token/Google",
                              method: "POST",
@@ -160,7 +160,7 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
                 let tokenRequest = TokenRequest(Email: email, FirstName: firstName, LastName: lastName, PictureUrl: pictureUrl,
                                                 FacebookToken: facebookToken, GoogleToken: "", DeviceID: "")
                 
-                self.SetUser(email: email, firstName: firstName, lastName: lastName, pictureUrl: pictureUrl)
+                self.SetUser(email: email, firstName: firstName, lastName: lastName, pictureUrl: pictureUrl, score: 0)
                 
                 HttpRequest.send(url: "token/Facebook",
                                  method: "POST",
@@ -180,10 +180,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         self.performSegue(withIdentifier: "sgLogin", sender: self)
     }
     
-    func SetUser(email: String, firstName: String, lastName: String, pictureUrl: String) {
+    func SetUser(email: String, firstName: String, lastName: String, pictureUrl: String, score: Int) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.user = User(Email: email, FirstName: firstName, LastName: lastName, PictureUrl: pictureUrl)
+        appDelegate.user = User(Email: email, FirstName: firstName, LastName: lastName, PictureUrl: pictureUrl, Score: score)
     }
     
     func CallbackError(statusCode:Int, message: String)

@@ -54,7 +54,7 @@ class TaskBooleanViewCell: UITableViewCell {
     {
     }
     
-    func CallbackSuccess(result: JsonResult<Bool>)
+    func CallbackSuccess(result: JsonResult<UploadEntryResponse>)
     {
     }
     
