@@ -90,7 +90,7 @@ class TaskEditViewController: UIViewController {
          
             task = Task(taskId, label, dataType: dataType,
                             unit: unit, hasGoal: swSetGoal.isOn,
-                            goalMinMax: sgmGoalMinMax.selectedSegmentIndex + 1,
+                            goalMinMax: getGoalMinMaxValue(),
                             goal: goal,
                             goalTimeFrame: sgmGoalTimeFrame.selectedSegmentIndex + 1,
                             status: 1,
@@ -105,6 +105,16 @@ class TaskEditViewController: UIViewController {
         }
         else {
             //TODO:
+        }
+    }
+    
+    func getGoalMinMaxValue() -> Int {
+        
+        if (sgmGoalMinMax.selectedSegmentIndex == 0) {
+            return 1
+        }
+        else {
+            return 3
         }
     }
     

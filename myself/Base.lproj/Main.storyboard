@@ -279,6 +279,7 @@
                                                     <constraint firstAttribute="width" constant="90" id="OXP-Hl-3q4"/>
                                                 </constraints>
                                                 <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="units" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKP-NQ-F41">
@@ -303,7 +304,6 @@
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <segments>
                                             <segment title="exactly"/>
-                                            <segment title="or less"/>
                                             <segment title="or more"/>
                                         </segments>
                                     </segmentedControl>
