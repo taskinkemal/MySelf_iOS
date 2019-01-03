@@ -25,6 +25,8 @@
 		835E792121B2BBA600912895 /* TokenRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E792021B2BBA600912895 /* TokenRequest.swift */; };
 		835E792321B2BCAE00912895 /* AuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E792221B2BCAE00912895 /* AuthToken.swift */; };
 		835E792521B336A400912895 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 835E792421B336A400912895 /* GoogleService-Info.plist */; };
+		836DE3D821DD68CB0081B253 /* GoalEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DE3D721DD68CB0081B253 /* GoalEditViewController.swift */; };
+		836DE3DA21DD69400081B253 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DE3D921DD69400081B253 /* Goal.swift */; };
 		83F26F8921AACCC1001A8546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F26F8821AACCC1001A8546 /* AppDelegate.swift */; };
 		83F26F8B21AACCC1001A8546 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83F26F8A21AACCC1001A8546 /* ViewController.swift */; };
 		83F26F8E21AACCC1001A8546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83F26F8C21AACCC1001A8546 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		835E792021B2BBA600912895 /* TokenRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRequest.swift; sourceTree = "<group>"; };
 		835E792221B2BCAE00912895 /* AuthToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthToken.swift; sourceTree = "<group>"; };
 		835E792421B336A400912895 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		836DE3D721DD68CB0081B253 /* GoalEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalEditViewController.swift; sourceTree = "<group>"; };
+		836DE3D921DD69400081B253 /* Goal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 		83F26F8521AACCC1001A8546 /* myself.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myself.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83F26F8821AACCC1001A8546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83F26F8A21AACCC1001A8546 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 				8326C1B921C5AC2C002E2E51 /* JsonResult.swift */,
 				8306701821CFC77D00F708F1 /* UploadEntryResponse.swift */,
 				8306701A21CFC7A000F708F1 /* UserBadge.swift */,
+				836DE3D921DD69400081B253 /* Goal.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -187,6 +192,7 @@
 				830D368C21B1DF3100BCB8D5 /* TaskBooleanViewCell.swift */,
 				8326C1B721C592A8002E2E51 /* TasksPageViewController.swift */,
 				8326C1BB21C6ED3F002E2E51 /* TaskEditViewController.swift */,
+				836DE3D721DD68CB0081B253 /* GoalEditViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -383,9 +389,11 @@
 				8326C1BA21C5AC2C002E2E51 /* JsonResult.swift in Sources */,
 				83F26F9E21AACDDE001A8546 /* HttpRequest.swift in Sources */,
 				8348A09821BB2C1600D463D5 /* SyncTasks.swift in Sources */,
+				836DE3D821DD68CB0081B253 /* GoalEditViewController.swift in Sources */,
 				83F26F8921AACCC1001A8546 /* AppDelegate.swift in Sources */,
 				8326C1BC21C6ED3F002E2E51 /* TaskEditViewController.swift in Sources */,
 				835E792321B2BCAE00912895 /* AuthToken.swift in Sources */,
+				836DE3DA21DD69400081B253 /* Goal.swift in Sources */,
 				832ED21721B4116D00CD4720 /* Utils.swift in Sources */,
 				83F26F9C21AACDD2001A8546 /* Constants.swift in Sources */,
 				835E792121B2BBA600912895 /* TokenRequest.swift in Sources */,

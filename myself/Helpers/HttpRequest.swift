@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Crashlytics
 
 final class HttpRequest
 {
@@ -32,6 +33,7 @@ final class HttpRequest
             }
             
         } catch let error {
+            Crashlytics.sharedInstance().recordError(error)
             cbError(statusCode, error.localizedDescription)
             return
         }
@@ -51,9 +53,10 @@ final class HttpRequest
             (
             data, response, error) in
             
-            guard let _:Data = data, let _:URLResponse = response  , error == nil else {
+            guard let _:Data = data, let _:URLResponse = response, error == nil else {
                 
                 cbError(statusCode, "Response is empty")
+                Crashlytics.sharedInstance().recordError(error!)
                 return
             }
             
@@ -72,6 +75,7 @@ final class HttpRequest
                 }
                 catch
                 {
+                    Crashlytics.sharedInstance().recordError(error)
                     cbError(statusCode, "Response is invalid")
                     return
                 }
@@ -92,7 +96,7 @@ final class HttpRequest
                 cbError(statusCode, errorMessage)
                 return
             }
-            let feedback = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            //let feedback = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
 
             
             let decoder = JSONDecoder();
@@ -102,6 +106,7 @@ final class HttpRequest
                 let result = try decoder.decode(T.self, from: data!);
                 cbSuccess(result)
             } catch {
+                Crashlytics.sharedInstance().recordError(error)
                 print("Unexpected error: \(error).")
             }
             
