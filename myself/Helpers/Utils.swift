@@ -44,15 +44,20 @@ final class Utils {
     
     static func GetDayOfWeek(day: Int) -> String {
         
+        let date = GetDate(day: day)
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE"
+        return dateFormatter.string(from: date).capitalized
+    }
+    
+    static func GetDate(day: Int) -> Date {
+        
         let startDate = GetDateZero()
         
         var dateComponent = DateComponents()
         dateComponent.day = day
         
-        let date = Calendar.current.date(byAdding: dateComponent, to: startDate)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "EEEE"
-        return dateFormatter.string(from: date!).capitalized
+        return Calendar.current.date(byAdding: dateComponent, to: startDate)!
     }
 }

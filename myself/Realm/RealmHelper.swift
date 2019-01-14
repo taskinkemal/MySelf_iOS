@@ -13,22 +13,21 @@ final class RealmHelper {
     
     static func SaveTask(task: Task) {
         
-        let realm = try! Realm()
-        
-        try! realm.write {
-            
-            realm.add(task, update: true)
-            try! realm.commitWrite()
-        }
+        Save(object: task)
     }
     
     static func SaveEntry(entry: Entry) {
         
+        Save(object: entry)
+    }
+    
+    private static func Save<T : Object>(object: T)
+    {
         let realm = try! Realm()
         
         try! realm.write {
             
-            realm.add(entry, update: true)
+            realm.add(object, update: true)
             try! realm.commitWrite()
         }
     }
@@ -106,5 +105,10 @@ final class RealmHelper {
                          data: entry,
                          cbSuccess: CallbackSuccessUploadEntry,
                          cbError: CallbackError);
+    }
+    
+    static func SaveGoal(goal: Goal) {
+        
+        Save(object: goal)
     }
 }

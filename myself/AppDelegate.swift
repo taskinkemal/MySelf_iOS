@@ -11,6 +11,7 @@ import FBSDKLoginKit
 import Firebase
 import Fabric
 import Crashlytics
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         Fabric.with([Crashlytics.self])
-        
+        Realm.Configuration.defaultConfiguration.deleteRealmIfMigrationNeeded = true
         NSSetUncaughtExceptionHandler { exception in
             
             Crashlytics.sharedInstance().recordCustomExceptionName(

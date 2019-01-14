@@ -10,6 +10,9 @@ import UIKit
 
 class GoalEditViewController: UIViewController {
 
+    public var goalId = 0
+    var goal: Goal? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
